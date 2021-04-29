@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+import React,{useState} from 'react'
 import './App.css';
 
 function App() {
+
+  const [query, setQuery] = useState("")
+
+  function SearchMovie(){
+    console.log("hello");
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <form className="form" onSubmit={SearchMovie}>
+            <label className="label" htmlFor="query">
+              Movie Name
+              <input 
+                className="input"
+                type="text"
+                name="query"
+                placeholder="e.g. Step Up"
+                value={query}
+                onChange={e => setQuery(e.target.value)}/>
+            </label>
+            <button className="button" type="submit">Search</button>
+        </form>
   );
 }
 
