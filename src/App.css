@@ -7,6 +7,7 @@ body{
   display: grid;
   max-width: 1000px;
   margin:0 auto;
+  padding:0 30px;
 }
 
 .label{
@@ -19,17 +20,22 @@ body{
   font-size: 1.4rem;
   padding:.7rem 1rem;
   border-radius: 25px;
-  border: 1px solid rgba(0,0,0,.3)
+  border: 1px solid rgba(0,0,0,.3);
+  outline: none;
 }
 
 .button{
   margin-top: .5rem;
-  background-color: #333;
+  background-color: rgba(0,0,0,0.75);
   color: #fff;
   cursor: pointer;
-  transition: background-color 530ms;
+  transition: background-color 250ms;
 }
 
 .button:hover{
-  background-color: rgba(0,0,0,.6);
+  background-color: rgba(0,0,0,0.85);
+}
+
+.test{
+  font-size: 2rem;
 }
