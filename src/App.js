@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import './App.css';
+import MovieSearch from './movieSearch'
 
 function App() {
    //states- input query, movies
@@ -8,8 +9,8 @@ function App() {
   //create the state for movies, and update that state appropriate
   const [movie, setMovie] = useState([])
 
-  const [test] = useState([3,5,6,3,3]);
-  const [test1] = useState([{num:3},{num:3},{num:4},{num:9},{num:5}]);
+  // const [test] = useState([3,5,6,3,3]);
+  // const [test1] = useState([{num:3},{num:3},{num:4},{num:9},{num:5}]);
 
   async function SearchMovie(e){
     e.preventDefault();
@@ -25,10 +26,11 @@ function App() {
     }
   }
 
-  console.log(movie)
-  console.log(test1)
+  // console.log(movie)
+  // console.log(test1)
 
   // const exa = !query ? "none" : "block";
+
   return (
     <>
         <form className="form" onSubmit={SearchMovie}>
@@ -49,24 +51,8 @@ function App() {
               <h1 style={{textAlign:"center", display: !query ? "none" : "block" }}><small>you might be searching for : {query}</small></h1>
         </div>
 
+        <MovieSearch movie={movie}/>
 
-        {/* {movies.filter(movie => movie.poster_path).map(movie => ( */}
-                   
-          <div className="card-list">
-             <p className="test">
-                {test.map(test => test + 10)}
-             </p>
-             
-             <p className="test">
-                {test1.map(test => test.num )}
-             </p>
-             
-             <div className="test">
-                {movie.map(test => {
-                  return (<p key={test.id}>{test.id}</p>)
-                  })}
-             </div>
-          </div>    
       </>
   );
 }
